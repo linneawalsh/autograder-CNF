@@ -463,6 +463,20 @@ def cnf(formula, vars):
 
     return formula
 
+def findSolution(formula):
+    output = set()
+
+    vars = findVars(formula)
+    formula = cnf(formula, vars)
+
+    if len(formula) > 1 and formula[1] == "a":
+        for item in clauseSplit(formula[1:-1], vars):
+            output.add(item)
+    else:
+        output.add(formula)
+    
+    return output
+
 
 def main():
 
