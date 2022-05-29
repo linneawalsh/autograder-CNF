@@ -475,7 +475,7 @@ def findSolution(formula):
     else:
         output.add(formula)
     
-    return output
+    return output, formula
 
 
 def main():
